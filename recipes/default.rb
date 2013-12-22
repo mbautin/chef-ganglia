@@ -62,4 +62,5 @@ service "ganglia-monitor" do
   pattern "gmond"
   supports :restart => true
   action [ :enable, :start ]
+  ignore_failure true  # ganglia monitor restarts are flaky
 end
